@@ -1,6 +1,6 @@
 import { snapiCustomFetch } from '@/utils/customFetch'
 import type { NewsResponse } from '@/utils/types';
-import type { LoaderFunction } from 'react-router-dom';
+import { useLoaderData, type LoaderFunction } from 'react-router-dom';
 
 
 const newsParams = {
@@ -28,6 +28,7 @@ export const newsPageLoader: LoaderFunction = async (): Promise<NewsResponse | n
 
 
 const News = () => {
+  const {results} = useLoaderData() as NewsResponse;
   return (
     <div>News</div>
   )
