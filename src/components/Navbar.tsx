@@ -4,7 +4,7 @@ import LinksDesktop from './LinksDesktop'
 
 const Navbar = () => {
   return (
-    <nav className='bg-black text-white'>
+    <nav className='bg-black'>
       <div className='align-element'>
         <LinksMobile />
         <LinksDesktop />      

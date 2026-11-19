@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const LinksDesktop = () => {
   return (
-    <div className='hidden w-full lg:flex gap-x-[5rem] justify-center items-center'>
+    <div className='hidden w-full lg:flex gap-x-[5rem] justify-center items-center text-white'>
         {
             links.map((link) => {
                 const {ref, label} = link as Link;
