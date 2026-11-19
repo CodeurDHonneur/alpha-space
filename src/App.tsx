@@ -3,9 +3,10 @@ import { Button } from '@/components/ui/button'
 
 function App() {
   return (
-    // <div className="text-3xl font-bold underline text-blue-700">
+    <div className="">
       <Button>Click me</Button>
-    // </div>
+      <h1 className='mars-font'>Mars</h1>
+    </div>
   )
 }
 
