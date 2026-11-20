@@ -1,4 +1,4 @@
-import { CardsGrid } from '@/components';
+import { CardsGrid, Overview, Title } from '@/components';
 import { snapiCustomFetch } from '@/utils/customFetch'
 import type { NewsResponse } from '@/utils/types';
 import { useLoaderData, type LoaderFunction } from 'react-router-dom';
@@ -29,10 +29,13 @@ export const newsPageLoader: LoaderFunction = async (): Promise<NewsResponse | n
 
 
 const News = () => {
-  const {results} = useLoaderData() as NewsResponse;
+  const data = useLoaderData() as NewsResponse;
+  const {results} = data;
 
   return (
     <section className='section align-element'>
+      <Title text="All news" />
+      <Overview objects={data} />
       <CardsGrid objects={results} mode="news-page"/>
     </section>
   )
