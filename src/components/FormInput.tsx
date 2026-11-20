@@ -12,15 +12,17 @@ type FormInputProps = {
 
 const FormInput = ({ label, name, type, defaultValue, placeholder }: FormInputProps) => {
     return (
-        <div>
-            <Label className='' htmlFor={name}>
+        <div className='flex flex-col gap-1'>
+            <Label
+                className='capitalize text-xl'
+                htmlFor={name}>
                 {label || name}
             </Label>
             <Input
                 id={name}
                 name={name}
                 type={type}
-                defaultValue={defaultValue ? defaultValue : ""} 
+                defaultValue={defaultValue ? defaultValue : ""}
                 placeholder={placeholder}
             />
         </div>
