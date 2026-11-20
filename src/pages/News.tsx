@@ -1,4 +1,5 @@
 import { CardsGrid, Overview, Title } from '@/components';
+import Filters from '@/components/Filters';
 import { snapiCustomFetch } from '@/utils/customFetch'
 import type { NewsResponse } from '@/utils/types';
 import { useLoaderData, type LoaderFunction } from 'react-router-dom';
@@ -36,6 +37,7 @@ const News = () => {
     <section className='section align-element'>
       <Title text="All news" />
       <Overview objects={data} />
+      <Filters term="term" mode="news" />
       <CardsGrid objects={results} mode="news-page"/>
     </section>
   )
