@@ -1,3 +1,4 @@
+import { CardsGrid, Overview, Title } from '@/components'
 import { datastroCustomFetch } from '@/utils/customFetch'
 import type { HubbleImagesResponse } from '@/utils/types'
 import React from 'react'
@@ -14,7 +15,7 @@ export const hubblePageLoader: LoaderFunction = async (): Promise<HubbleImagesRe
       ...hubbleParams,
     };
 
-    const response = await datastroCustomFetch.get<HubbleImagesResponse>("", {params: formattedParams});
+    const response = await datastroCustomFetch.get<HubbleImagesResponse>("", { params: formattedParams });
     return response.data;
 
   } catch (error) {
@@ -25,9 +26,15 @@ export const hubblePageLoader: LoaderFunction = async (): Promise<HubbleImagesRe
 
 const Hubble = () => {
   const data = useLoaderData() as HubbleImagesResponse;
-  console.log(data);
+
+
   return (
-    <div>Hubble</div>
+    <section className='section'>
+
+      <Title text='Hubble telescope photos' />
+      <Overview objects={data} />
+      <CardsGrid objects={data} mode="hubble-page"/>
+    </section>
   )
 }
 
