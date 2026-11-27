@@ -18,7 +18,7 @@ const HubbleCard = ({image}: {image: HubbleImage}) => {
 
     return (
     <Link to={`/hubble/${photo_id}`} >
-        <Card className='relative min-h-[400px] rounded-none slider-card'>
+        <Card className='relative min-h-100 rounded-none slider-card'>
             <CardHeader className='absolute top-2 left-2 text-white z-10'>
                 <CardTitle>{photo_title}</CardTitle>
             </CardHeader>
