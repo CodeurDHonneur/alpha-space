@@ -15,5 +15,6 @@ export const datastroCustomFetch = axios.create({
     baseURL: datastroAPI
 })
 export const nasaCustomFetch = axios.create({
-    baseURL: nasaAPI
+    baseURL: nasaAPI,
+    params: { api_key: import.meta.env.VITE_API_KEY_NASA }
 })
