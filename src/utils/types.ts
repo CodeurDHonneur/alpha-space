@@ -65,3 +65,8 @@ export type PhotoURLM = {
     height:            number;
     url:               string;
 }
+
+export type HubbleImagesResponseWithParams = {
+    response : HubbleImagesResponse;
+    params: FiltersParams
+}
