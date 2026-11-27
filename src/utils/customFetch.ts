@@ -4,7 +4,7 @@ const snapiAPI = "https://api.spaceflightnewsapi.net/v4/articles/";
 
 const datastroAPI = "https://www.datastro.eu/api/explore/v2.1/catalog/datasets/nasahubble/records";
 
-const nasaAPI = "https://science.nasa.gov/wp-json/wp/v2/apod-basic";
+const nasaAPI = "https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=DEMO_KEY";
 
 
 export const snapiCustomFetch = axios.create({
@@ -16,5 +16,5 @@ export const datastroCustomFetch = axios.create({
 })
 export const nasaCustomFetch = axios.create({
     baseURL: nasaAPI,
-    params: { api_key: import.meta.env.VITE_API_KEY_NASA }
+    // params: { api_key: import.meta.env.VITE_API_KEY_NASA }
 })

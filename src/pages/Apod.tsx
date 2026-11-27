@@ -1,3 +1,5 @@
+import { Title } from '@/components'
+import ApodPlayer from '@/components/ApodPlayer'
 import { nasaCustomFetch } from '@/utils/customFetch'
 import type { ApodType } from '@/utils/types'
 import React from 'react'
@@ -16,12 +18,15 @@ export const apodPageLoader: LoaderFunction = async (): Promise<ApodType | null>
 
 
 const Apod = () => {
-  const defaultApod = useLoaderData() as ApodType;
+  const defaultApod = useLoaderData() as ApodType[];
   console.log(defaultApod);
 
-  
+
   return (
-    <div>Apod</div>
+    <section className='section'>
+      <Title text="NASA's astronomy picture of the day" />
+      {defaultApod.map((apod, index) => <ApodPlayer apod={apod} key={index}/>) }
+    </section>
   )
 }
 
